@@ -171,7 +171,7 @@ Currently the following charts are supported
 			...
 		</feed>
 
- 5. Intensity Chart:
+ 6. Intensity Chart:
    Purpose: Can be used for multiple column geo representations e.g. country + sales + cost + population. 
    for more column support use intensity charts mentioned below 
    
