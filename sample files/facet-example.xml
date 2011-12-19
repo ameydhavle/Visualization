@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<search:response total="94" start="1" page-length="10" xmlns="" xmlns:search="http://marklogic.com/appservices/search">
+  <search:facet name="award">
+    <search:facet-value name="best-director" count="18">best-director</search:facet-value>
+    <search:facet-value name="best-picture" count="16">best-picture</search:facet-value>
+    <search:facet-value name="lead-actor" count="21">lead-actor</search:facet-value>
+    <search:facet-value name="lead-actress" count="19">lead-actress</search:facet-value>
+    <search:facet-value name="supporting-actor" count="9">supporting-actor</search:facet-value>
+    <search:facet-value name="supporting-actress" count="11">supporting-actress</search:facet-value>
+  </search:facet>
+  <search:facet name="decade">
+    <search:facet-value name="1920s" count="2">1920s</search:facet-value>
+    <search:facet-value name="1930s" count="1">1930s</search:facet-value>
+    <search:facet-value name="1940s" count="17">1940s</search:facet-value>
+    <search:facet-value name="1950s" count="3">1950s</search:facet-value>
+    <search:facet-value name="1960s" count="3">1960s</search:facet-value>
+    <search:facet-value name="1970s" count="11">1970s</search:facet-value>
+    <search:facet-value name="1980s" count="14">1980s</search:facet-value>
+    <search:facet-value name="1990s" count="22">1990s</search:facet-value>
+    <search:facet-value name="2000s" count="21">2000s</search:facet-value>
+  </search:facet>
+  <search:facet name="win">
+    <search:facet-value name="false" count="79">false</search:facet-value>
+    <search:facet-value name="true" count="15">true</search:facet-value>
+  </search:facet>
+  <search:facet name="actor">
+    <search:facet-value name="Clint Eastwood" count="6">Clint Eastwood</search:facet-value>
+    <search:facet-value name="Judi Dench" count="6">Judi Dench</search:facet-value>
+    <search:facet-value name="Glenn Close" count="5">Glenn Close</search:facet-value>
+    <search:facet-value name="Tom Hanks" count="5">Tom Hanks</search:facet-value>
+    <search:facet-value name="Johnny Depp" count="3">Johnny Depp</search:facet-value>
+    <search:facet-value name="Orson Welles" count="3">Orson Welles</search:facet-value>
+    <search:facet-value name="Nicole Kidman" count="2">Nicole Kidman</search:facet-value>
+    <search:facet-value name="Sally Field" count="2">Sally Field</search:facet-value>
+    <search:facet-value name="Adrian Lyne" count="1">Adrian Lyne</search:facet-value>
+    <search:facet-value name="Agnes Moorehead" count="1">Agnes Moorehead</search:facet-value>
+  </search:facet>
+  <search:facet name="film">
+    <search:facet-value name="Pulp Fiction" count="5">Pulp Fiction</search:facet-value>
+    <search:facet-value name="Fatal Attraction" count="4">Fatal Attraction</search:facet-value>
+    <search:facet-value name="Forrest Gump" count="4">Forrest Gump</search:facet-value>
+    <search:facet-value name="The Curious Case of Benjamin Button" count="4">The Curious Case of Benjamin Button</search:facet-value>
+    <search:facet-value name="The Yearling" count="4">The Yearling</search:facet-value>
+    <search:facet-value name="Yankee Doodle Dandy" count="4">Yankee Doodle Dandy</search:facet-value>
+    <search:facet-value name="Apocalypse Now" count="3">Apocalypse Now</search:facet-value>
+    <search:facet-value name="Citizen Kane" count="3">Citizen Kane</search:facet-value>
+    <search:facet-value name="Mary Poppins" count="3">Mary Poppins</search:facet-value>
+    <search:facet-value name="MASH" count="3">MASH</search:facet-value>
+  </search:facet>
+  <search:qtext>Forrest</search:qtext>
+  <search:metrics>
+    <search:facet-resolution-time>PT0.012766S</search:facet-resolution-time>
+    <search:snippet-resolution-time>PT0S</search:snippet-resolution-time>
+    <search:total-time>PT0.016962S</search:total-time>
+  </search:metrics>
+</search:response>
