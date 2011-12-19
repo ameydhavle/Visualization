@@ -199,4 +199,27 @@ Currently the following charts are supported
 			</data>
 			...
 		</feed>		
-		
+
+ 7. Facet charts:
+   Purpose: Can be used for visualizing all the search facets
+   
+   Usage notes:
+   Step 1: Import the module 
+     	import module namespace visualization = "marklogic-visualization" at "module-visualization/visualization.xqy";
+   Step 2: Import dependencies by putting the following code in the head section
+      		{visualization:importScripts()}	
+   Step 3: place the call enclosed in a <script type..> </script> tag 
+  			<script type="text/javascript">
+				{ visualization:facet-charts(fn:doc("/facet-example.xml")/search:response)}
+    		</script>
+   Step 4: place the js to create dynamic div's based on facet count   		...
+			<script type="text/javascript">
+    			function creatediv(id) {{
+			    var newdiv = document.createElement('div');
+			    newdiv.setAttribute('id', id);
+			    newdiv.setAttribute('style',"width: 800px; float: left; height: 200px; margin: 0 auto");
+   				newdiv.innerHTML = "nothing";
+			   document.body.appendChild(newdiv);
+				}} 
+    		</script>
+

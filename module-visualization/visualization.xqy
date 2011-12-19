@@ -1,6 +1,6 @@
 xquery version "1.0-ml";
 module namespace visualization = "marklogic-visualization";
-
+declare namespace search="http://marklogic.com/appservices/search";
 declare function visualization:importScripts(){
 let $scripts:=
               <setup>
@@ -300,4 +300,49 @@ declare function visualization:annotationChart($arg as item()*){
 return ($init-code,visualization:get-annotationTable($arg),$postfix-code) 
 };
 
+
+
+declare function visualization:facet-charts($arg as item()*){
+let $init-script:=("google.load('visualization', '1.0', {'packages':['corechart']});
+    google.setOnLoadCallback(drawChartFacet);
+	function drawChartFacet() {") 
+	 return ($init-script,visualization:facet-generateData($arg),'}')      
+};
+
+declare function visualization:facet-generateData($arg as item()*){
+let $facets-count:= fn:count($arg/search:facet)
+for $facet-loop in 1 to $facets-count
+return
+let $facets:=
+for $c in $arg/node()[$facet-loop] return (fn:data($c/@name))
+
+let $columns:=
+for $c in $arg/node()[$facet-loop]/element() return (fn:data($c/@name))
+
+let $columns-data:= ('var', $facets,' = new google.visualization.DataTable();',
+      $facets,'.addColumn(''string'',' ,'''', $facets,''');',
+      $facets,'.addColumn(''number'', ''Count'');')
+let $row-init := xs:string("data.addRows([")
+let $row-init := ($facets,'.addRows([')
+let $creatediv:=("javascript:creatediv('",$facets,"'); ")
+let $chart-options:= ("var",fn:concat($facets,"opt")," = {'title':'",$facets,"',
+                     'width':400,
+                     'height':200};")
+let $script-postfix:=  ("var ", fn:concat($facets,"chrt")," = new google.visualization.PieChart(document.getElementById('",$facets,"'));",
+      fn:concat($facets,"chrt"),".draw(",$facets,",",fn:concat($facets,xs:string('opt')),")")
+     
+let $row-postfix := xs:string("]);")
+let $rows:=
+for $r in $arg/node()
+ return
+ for $c  at $pos in $r/element()[1]/@count return if($pos eq 1) then fn:data($c) else xs:integer($c)
+ 
+ let $row-data:= for $loop in 1 to fn:count($rows)
+ return ('[''',$columns[$loop],''',' ,$rows[$loop],'],')
+
+
+
+let $facets-data:= ($columns-data,$row-init,$row-data,$row-postfix,$creatediv,$chart-options,$script-postfix,";")
+return ($facets-data)
+};
 
