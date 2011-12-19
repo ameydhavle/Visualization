@@ -212,14 +212,4 @@ Currently the following charts are supported
   			<script type="text/javascript">
 				{ visualization:facet-charts(fn:doc("/facet-example.xml")/search:response)}
     		</script>
-   Step 4: place the js to create dynamic div's based on facet count   		...
-			<script type="text/javascript">
-    			function creatediv(id) {{
-			    var newdiv = document.createElement('div');
-			    newdiv.setAttribute('id', id);
-			    newdiv.setAttribute('style',"width: 800px; float: left; height: 200px; margin: 0 auto");
-   				newdiv.innerHTML = "nothing";
-			   document.body.appendChild(newdiv);
-				}} 
-    		</script>
-
+   

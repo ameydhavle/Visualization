@@ -9,7 +9,15 @@ let $scripts:=
 				<script type="text/javascript" src="/js/highcharts.js">//</script>
 				<script type="text/javascript" src="http://www.google.com/jsapi">//</script>
 				<script type="text/javascript" src="/js/jquery.gvChart-1.0.min.js">//</script>
-				
+				<script type="text/javascript">
+    				function creatediv(id) {{
+    					var newdiv = document.createElement('div');
+					    newdiv.setAttribute('id', id);
+					    newdiv.setAttribute('style',"width: 800px; float: left; height: 200px; margin: 0 auto");
+   					    newdiv.innerHTML = "nothing";
+					   document.body.appendChild(newdiv);
+					}} 
+    			</script>
                </setup> 
 return $scripts//script
 };
